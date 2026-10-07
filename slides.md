@@ -11,7 +11,7 @@ download: true
 ---
 
 # The 12th Dirac(X) Users' Workshop
-## DiracGrid, DiracX, and the Road Ahead
+## Introduction to the workshop
 
 **Federico Stagni** <Email v="federico.stagni@cern.ch" />
 
@@ -24,12 +24,52 @@ DiracGrid Technical Coordinator
 <a href="https://indico.cern.ch/event/1588323/" class="ns-c-iconlink"><mdi-open-in-new />indico.cern.ch/event/1588323</a>
 
 ---
-layout: section
-color: diracx
-title: Monolith to Puzzle
+layout: top-title-two-cols
+color: diracx-light
+align: cm-lm-lm
+title: welcome
+columns: is-6
 ---
 
-# From the Monolith to the Puzzle
+:: title::
+
+# Welcome to the 12th DIRAC Users' Workshop
+
+:: left ::
+
+
+![](/public/images/DIRAC_old_logo.webp)
+![](/public/images/DIRAC-logo-extended.png)
+![](/public/images/diracx-logo-full.svg)
+
+
+<br>
+<br>
+<br>
+
+:: right :: 
+
+- ... plus **2 "virtual" ones** that were held in COVID times.
+- Great to see so many familiar faces here in Prague
+  - and, equally, new ones.
+
+---
+layout: top-title
+color: diracx-light
+align: cm
+title: rules
+---
+
+:: title::
+
+# Workshop Rules
+
+:: content ::
+
+- The agenda has a **clear divide**: we *present in the mornings*, and we *discuss/hack in the afternoons* (in smaller groups)
+- In general, there is **always** time for questions, but if they can be asked in the afternoons, **do ask them in the afternoons**
+  - we often reserve topic sessions in the afternoons as continuation of the what is presented in the mornings
+- We are here to **learn** from each other and **get things done**
 
 ---
 layout: top-title
@@ -78,7 +118,11 @@ Nowadays, the DiracGrid project develops/maintains DIRAC, DiracX, Web, etc... (e
 
 Also the **logos changed**: we moved from the DIRAC branding to the new **DiracX** identity.
 
-<img src="/public/images/diracx-logo-full.svg" class="mx-auto w-2/5 diracx-logo"> </img>
+<div class="flex justify-center items-center gap-8">
+  <span class="text-3xl font-bold text-gray-400">DIRAC</span>
+  <span class="text-4xl">→</span>
+  <img src="/public/images/diracx-logo-full.svg" class="w-1/3 diracx-logo"> </img>
+</div>
 
 ---
 layout: top-title
@@ -101,197 +145,60 @@ title: 2026-pivotal
   - [DX-ADR series](https://github.com/DIRACGrid/diracx/pulls?q=is%3Apr+is%3Aopen+label%3AADR) covers Transformation System, compute backends, CWL, and more
 
 ---
-layout: top-title-two-cols
-color: diracx-light
-align: c-lm-lm
-title: disambiguation
-columns: is-4
----
-
-:: title ::
-
-# "Just rewriting" vs "Rethink and write"
-
-:: left ::
-
-**Just rewriting**
-- Port existing functionality line-by-line
-- Same architecture, new language/framework
-- Fast, but locks in past limitations
-
-:: right ::
-
-**Rethink and write** (our approach)
-- Question every assumption from the ground up
-- Cloud-native, multi-VO from the get-go, standards-based
-- Slower upfront, but the result is **younger, faster, better, stronger**
-- DiracX is not DIRAC in a new language — it's DIRAC reimagined
-
-<AdmonitionType type='important' >
-A DIRAC++, in terms of functionalities — not just a port.
-</AdmonitionType>
-
----
 layout: top-title
 color: diracx-light
 align: cm
-title: strategies
+title: communication
 ---
 
 :: title ::
 
-# Migration strategies we use (and when)
+# Communication
 
 :: content ::
 
-| Strategy | What | When adopted | Why |
-|----------|------|-------------|-----|
-| **FutureAdaptors** | 1-to-1 service replacements | Early prototypes | Quick wins, but bound to old DB schema; partially adopted |
-| **RSS strategy** | Replace subsystem by subsystem | Ongoing | Minimizes disruption, allows gradual validation |
-| **Legacy DIRAC as a backend** | DIRAC WMS as a compute backend from TransformationSystem POV | Current design | Eases transition, reuses investment |
-| **Canary releases** | Gradual replacement on specific workloads | As features mature | Low-risk, real-world validation before full rollout |
-
-<AdmonitionType type='note' >
-<strong>Migrating extension code?</strong> Start by identifying which strategy fits your use case. FutureAdaptors work for direct service replacements, but for larger rewrites, plan around the new ADR-driven architecture.
-</AdmonitionType>
-
----
-layout: top-title
-color: diracx-light
-align: cm
-title: roadmap
----
-
-:: title ::
-
-# The new roadmap
-
-:: content ::
-
-**TBD** – This will be discussed and finalized during the workshop.
-
-Key areas under consideration:
-- Transformation System completion
-- Data Management integration (Rucio or native)
-- Pilot / WMS development
-- Job wrapper design (CMS-proposed ADR?)
-- User-facing interfaces (analysis productions)
-
----
-layout: top-title
-color: diracx-light
-align: cm
-title: game-changed
----
-
-:: title ::
-
-# How the game has changed
-
-:: content ::
-
-> "The bottleneck for software development has always been writing code. With AI, **the bottleneck is our imagination**."
-> — Jonathan Heyne, COO of DeepLearning.AI ([The Register, Apr 2026](https://www.theregister.com/2026/04/28/software_development_ai_dev25xsf))
-
-<br>
-
-| Before | Now |
-|--------|-----|
-| Bottleneck: **not enough developers** | Bottleneck: **specifications** |
-| Every line hand-crafted by experts | LLMs write most of the code |
-| Slow progress, long backlogs | Good ADRs are the real multiplier |
-
-<AdmonitionType type='important' >
-The value is no longer in writing code — it's in <strong>knowing what code to write</strong>.
-</AdmonitionType>
-
-> "If I have to review the code, I become the bottleneck."
-> — Andrew Ng, [AI Dev 26 x SF](https://www.theregister.com/2026/04/28/software_development_ai_dev25xsf)
-
----
-layout: section
-color: diracx-green
-title: Numbers
----
-
-# Numbers since the previous workshop
+- We believe that proper communication is **paramount** to the success of the project
+- We organize **4 in-person meetings per year**:
+  - A 4-days workshop (somewhere, but **not at CERN**)
+  - 3 2-days hackathons (**at CERN**)
+- Every Thursday morning (at 10:00, at CERN) we meet:
+  - `DDev`: the "SCRUM meeting" (Alexandre)
+  - once every 4 weeks (mostly) proceeded by the `DOps` (a more operations and long-term developments oriented meeting)
+- We should keep **everyone's requirements** in consideration
 
 ---
 layout: top-title-two-cols
 color: diracx-light
 align: cm-lm-lm
-title: numbers-dirac
-columns: is-5
----
-
-:: title ::
-
-# DIRAC stack activity
-
-:: left ::
-
-<!-- TODO: Update with actual numbers from previous DUW -->
-
-- **Commits / PRs:** TBD
-- **Issues created:** TBD
-- **Issues closed:** TBD
-- **Contributors:** TBD
-
-:: right ::
-
-<!-- Reference: slides 20+21 from https://gitlab.cern.ch/alboyer/slides-computing-report-lhcb-week/-/raw/master/deck/20260915-LHCbWeek121-Compute.pdf -->
-
-<AdmonitionType type='note' >
-See [LHCb Computing Report slides 20-21](https://gitlab.cern.ch/alboyer/slides-computing-report-lhcb-week/-/raw/master/deck/20260915-LHCbWeek121-Compute.pdf) for detailed metrics.
-</AdmonitionType>
-
----
-layout: top-title-two-cols
-color: diracx-light
-align: cm-lm-lm
-title: numbers-diracx
-columns: is-5
----
-
-:: title ::
-
-# DiracX stack activity
-
-:: left ::
-
-<!-- TODO: Update with actual numbers from previous DUW -->
-
-- **Commits / PRs:** TBD
-- **Issues created:** TBD
-- **Issues closed:** TBD
-- **Contributors:** TBD
-
-:: right ::
-
-<AdmonitionType type='note' >
-See [LHCb Computing Report slides 20-21](https://gitlab.cern.ch/alboyer/slides-computing-report-lhcb-week/-/raw/master/deck/20260915-LHCbWeek121-Compute.pdf) for detailed metrics.
-</AdmonitionType>
-
----
-layout: top-title
-color: diracx-light
-align: cm
 title: releases
 ---
 
 :: title ::
 
-# Releases
+# Releases for DIRAC and DiracX stacks
 
-:: content ::
+:: left ::
 
 **DIRAC v9**
+- v8, v9.0, v9.1
 - Regular releases continue
-- Changelog: [github.com/DIRACGrid/DIRAC/releases](https://github.com/DIRACGrid/DIRAC/releases)
+- [github.com/DIRACGrid/DIRAC/releases](https://github.com/DIRACGrid/DIRAC/releases)
 
 **DiracX**
 - Ongoing development releases
-- Changelog: [github.com/DIRACGrid/diracx/releases](https://github.com/DIRACGrid/diracx/releases)
+- [github.com/DIRACGrid/diracx/releases](https://github.com/DIRACGrid/diracx/releases)
+
+<br>
+
+`v8` and `v9.0` are in maintenance mode; new features go to `v9.1` and DiracX
+
+:: right ::
+
+
+<AdmonitionType type='note' >
+This workshop is a lot about DiracX (the future is always brighter). We will definitely talk about DIRAC too, of course
+</AdmonitionType>
+
 
 ---
 layout: top-title
@@ -308,37 +215,37 @@ title: v8-update
 
 For v8 users still on the legacy stack:
 
-- The only significant change is that **you should now target v9.0**
-- v8 is in maintenance mode; new features go to v9 and DiracX
-- Migration path is straightforward: update your dependencies and test against v9.0
-- Contact the DiracGrid team if you need help with the transition
+- WRT one year ago, the only significant change is that **you should now target `v9.0`** (always target the latest tag in this branch), while from the `integration` branch we tag `v9.1` releases
+  - [Wiki](https://github.com/DIRACGrid/DIRAC/wiki/DIRAC-9.0) for updating to `v9.0`
+  - [Wiki](https://github.com/DIRACGrid/DIRAC/wiki/DIRAC-9.1) for updating to `v9.1`
+- Contact the DiracGrid team (mostly me) if you need help with the transition
+
 
 ---
 layout: top-title
 color: diracx-light
 align: cm
-title: timeline-future
+title: v8-update-deadline
 ---
 
 :: title ::
 
-# Timeline (looking ahead)
+# Talking about update...
 
 :: content ::
 
-<!-- TODO: Add future timeline once roadmap is finalized -->
+What was in the presentation one year ago, at the 11th DUW:
 
-```mermaid
-%%{init: {'theme': 'base', 'timeline': {'disableMulticolor': false}}}%%
-timeline
-        title Roadmap outlook
-        2026 Q4 : ADR reviews concluded at DUW12
-                : Development plan finalized
-        2027 H1 : Transformation System implementation
-                : First canary releases
-        2027 H2 : Wider adoption by early-adopter communities
-        2028    : ...
-```
+![](/public/images/v8_EOL.png)
+![](/public/images/v8_EOL_text.png)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+...talk to us about this topic in the "Community Support" sessions these days.
 
 ---
 layout: top-title
@@ -349,186 +256,67 @@ title: hsf
 
 :: title ::
 
-# HSF Affiliated Project
+# Publications, Outreach, and HSF
 
 :: content ::
 
-<br>
+- CHEP 2026 papers on [DiracX in action](https://indico.cern.ch/event/1471803/contributions/6967106/) and [CWL](https://indico.cern.ch/event/1471803/contributions/6967104/)
 
-DiracGrid is an [**HSF affiliated project**](https://hepsoftwarefoundation.org/projects/projects.html).
 
-<br>
+**HSF Affiliated Project**
+- DiracGrid is an [**HSF affiliated project**](https://hepsoftwarefoundation.org/projects/projects.html)
+- Affiliation valid for 5 years (2025–2030), then reviewed for continuation
 
-<div class="flex justify-center items-center">
-  <img src="/public/images/hsf-logo.png" class="h-40 mx-auto" alt="HSF Logo">
+
+<div class="flex justify-center items-center mt-4">
+  <img src="/public/images/hsf-logo.png" class="h-24 mx-auto" alt="HSF Logo">
 </div>
 
-<br>
-
-This affiliation recognizes DiracGrid's contribution to the HEP software ecosystem and ensures alignment with community-wide best practices.
-
 ---
-layout: section
-color: diracx-green
-title: Publications
+layout: top-title
+color: diracx-light
+align: cm
+title: security
 ---
 
-# Publications and Outreach
+:: title ::
+
+# How to provide us a security advisory
+
+:: content ::
+
+- Security is a priority for the DiracGrid project
+- We use **GitHub Security Advisories** for private vulnerability reporting
+- Report at:
+  - [github.com/DIRACGrid/DIRAC/security](https://github.com/DIRACGrid/DIRAC/security)
+  - [github.com/DIRACGrid/diracx/security](https://github.com/DIRACGrid/diracx/security)
+- We will respond **ASAP**
+- Supported versions: **>= v8.0** (older versions are not patched)
 
 ---
 layout: top-title
 color: diracx-light
 align: cm
-title: chep-papers
+title: workshop-notes
 ---
 
 :: title ::
 
-# CHEP papers
+# 2 Free-for-all notes for This Workshop
 
 :: content ::
 
-<!-- TODO: Add CHEP paper references -->
+**Questions collection**
+- If you want, note down the questions in https://codimd.web.cern.ch/gJTuQq0cS4ugVgyQnd9AgA
+  - They will likely be answered in the "discussing and hacking" sessions
 
-- CHEP 2025 papers on DiracX architecture and deployment
-- Links and DOIs to be added
+**Summaries**
+- I will use https://codimd.web.cern.ch/xsfPlLVaRuiadX4hGUVmcw
+- Volunteers are encouraged to add to the notes and share their understanding
+- This helps everyone who couldn't attend and serves as a record for the community
 
----
-layout: top-title
-color: diracx-light
-align: cm
-title: other-conferences
----
+Both the links are also linked from the workshop materials.
 
-:: title ::
-
-# DiracX at other conferences
-
-:: content ::
-
-<!-- TODO: Add conference references -->
-
-- DiracX presentations at various HEP computing conferences
-- Community outreach and engagement
-
----
-layout: section
-color: diracx
-title: Program
----
-
-# Program of Work for These Days
-
----
-layout: top-title
-color: diracx-light
-align: cm
-title: program-details
----
-
-:: title ::
-
-# What we'll do together
-
-:: content ::
-
-<!-- TODO: Fill in with actual workshop program -->
-
-- Review and finalize the ADRs
-- Iron out the last details on the Transformation System design
-- Prepare the development plan
-- Code some of the tasks together
-- Discuss migration strategies for each community
-
-See the [full agenda](https://indico.cern.ch/event/1588323/timetable/) on Indico.
-
----
-layout: section
-color: diracx
-title: Conclusions
----
-
-# Summary
-
----
-layout: top-title-two-cols
-align: cm-cm-lm
-color: diracx-light
-columns: is-3
-title: summary
----
-:: title ::
-
-# Summary
-
-:: left ::
-
-<img src="/public/images/diracx-logo-square.svg" class="mx-auto w-3/5 diracx-logo"> </img>
-
-:: right ::
-
-- DiracGrid has a very active community of users and developers
-- **2026 is a pivotal year**: CMS and FCC joined, new dev process, ADRs for everything
-- DiracX is the **rethought** DIRAC — cloud-native, modular, standards-based
-- Multiple migration strategies are available depending on your needs
-- The **Transformation System** is the next big thing
-- **Let's build it together** during this workshop
-
----
-layout: credits
-color: diracx
-loop: true
-speed: 1.4
-title: credits/people
----
-
-<div class="grid text-size-4 grid-cols-3 w-3/4 gap-y-10 auto-rows-min ml-auto mr-auto">
-    <div class="grid-item text-center mr-0- col-span-3">
-        <strong>People</strong><br>
-    </div>
-    <div class="grid-item text-right mr-4 col-span-1">
-        <strong>Current Developers, maintainers, supporters (non-exhaustive list)</strong>
-    </div>
-    <div class="grid-item col-span-2">
-        Chris Burr <i>CERN, LHCb</i><br/>
-        Christophe Haen <i>CERN, LHCb</i><br/>
-        Alexandre Boyer <i>CERN, LHCb</i><br/>
-        Natthan Pigoux <i>LUPM (FR), CTAO</i><br/>
-        Cedric Serfon <i>Brookhaven National Laboratory (US), Belle2</i><br/>
-        Ryunosuke O'Neil <i>CERN, LHCb</i><br/>
-        Daniela Bauer <i>Imperial college (UK), GridPP</i><br/>
-        Simon Fayer <i>Imperial college (UK), GridPP</i><br/>
-        Janusz Martyniak <i>Imperial college (UK), GridPP</i><br/>
-        Xiaomei Zhang <i>Beijing, Inst. High Energy Phys. (CN), Juno</i><br/>
-        Luisa Arrabito <i>LUPM (FR), CTAO</i><br/>
-        André Sailer <i>CERN, ILC</i><br/>
-        Jorge Lisa Laborda <i>Univ. of Valencia and CSIC (ES), LHCb</i><br/>
-        Bertrand Rigaud <i>IN2P3 (FR), France-Grilles</i><br/>
-        Heloise Joffe <i>IN2P3 (FR), France-Grilles</i><br/>
-        Stella Maria Renucci <i>LUPM (FR), CTAO</i><br/>
-        Mazen Ezzeddine <i>CPPM (FR), EGI</i><br/>
-        Loris Vankatwijk <i>LUPM (FR), CTAO</i><br/>
-        Alan Malta <i>Notre Dame university (US), CMS</i><br/>
-        Andrea Piccinelli <i>Notre Dame university (US), CMS</i><br/>
-        Valentin Kuznetsov <i>Cornell University (US), CMS</i><br/>
-        Marco Mascheroni <i>(US), University of California San Diego (US), CMS</i><br/>
-        Todor Ivanov <i>Notre Dame university (US), CMS</i><br/>
-        Francesco Brivio <i>(IT), Milano Bicocca University, CMS</i><br/>
-        Juraj Smiesko <i>(CERN), FCC</i><br/>
-        Benedikt Wach <i>(CERN), FCC</i><br/>
-    </div>
-    <div class="grid-item text-right mr-4 col-span-1">
-        <strong>Project lead</strong>
-    </div>
-    <div class="grid-item col-span-2">
-        Federico Stagni <i>CERN, LHCb</i><br/>
-        Andrei Tsaregorodtsev <i>CPPM (FR), EGI, LHCb, Juno</i>
-    </div>
-</div>
-
-&nbsp;
-&nbsp;
-&nbsp;
 ---
 layout: section
 color: diracx
